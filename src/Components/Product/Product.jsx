@@ -24,7 +24,9 @@ const Product = ({ product }) => {
             {" "}
             <button className="btn font-bold w-full btn-info">Details</button>
           </Link>
-          <button className="btn w-full font-bold btn-primary">Update</button>
+          <Link className="w-full" to={`/update/${_id}`}>
+            <button className="btn w-full font-bold btn-primary">Update</button>
+          </Link>
         </div>
       </div>
     </div>
