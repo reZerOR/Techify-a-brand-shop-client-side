@@ -43,7 +43,7 @@ const AddProduct = () => {
       });
   };
   return (
-    <div className="bg-[#f4f3f0] p-24">
+    <div className="bg-[#f4f3f0] max-w-7xl mx-auto p-24">
       <h2 className="font-bold text-3xl">Add Poduct</h2>
       <form onSubmit={handleSubmit} className="space-y-6 ">
         {/*name and brand name*/}
@@ -145,8 +145,8 @@ const AddProduct = () => {
                 name="description"
                 placeholder="Description"
                 id=""
-                cols="30"
-                rows="10"
+                cols="10"
+                rows="5"
               ></textarea>
             </label>
           </div>
