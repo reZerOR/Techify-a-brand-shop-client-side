@@ -12,8 +12,6 @@ const BrandProduct = () => {
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
-  console.log(sliderImages);
-  console.log(products);
   return (
     <div className="max-w-7xl mx-auto">
       <Slider sliderImages={sliderImages}></Slider>

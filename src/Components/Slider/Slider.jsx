@@ -1,5 +1,4 @@
 const Slider = ({ sliderImages }) => {
-  console.log(sliderImages);
   const { brand_add_img_1, brand_add_img_2, brand_add_img_3 } = sliderImages;
   return (
     <div className="carousel">
