@@ -1,7 +1,16 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { authContext } from "../../Provider/Provider";
+import profile from "../../assets/user.png";
 
 const Navbar = () => {
-  const user = false;
+  const { user, logOut, setUser } = useContext(authContext);
+  console.log(user);
+
+  const handleLogOut = () => {
+    logOut().then().catch();
+    setUser(null);
+  };
   const links = (
     <>
       <li>
