@@ -3,8 +3,7 @@ import Swal from "sweetalert2";
 
 const ProductDetais = () => {
   const product = useLoaderData();
-  const { _id, name, image, type, price, rating, brand_name, description } =
-    product;
+  const { name, image, type, price, rating, brand_name, description } = product;
   const curt = { name, image, type, price, rating, brand_name };
   console.log(curt);
 
