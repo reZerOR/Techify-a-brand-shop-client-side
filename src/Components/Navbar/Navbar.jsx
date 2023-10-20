@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import { authContext } from "../../Provider/Provider";
 import profile from "../../assets/user.png";
 
@@ -7,13 +7,26 @@ const Navbar = () => {
   const { user, logOut, setUser } = useContext(authContext);
   console.log(user);
 
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+  const handleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   const handleLogOut = () => {
     logOut().then().catch();
     setUser(null);
   };
   const links = (
     <>
-      <li>
+      <li className="hover:text-white">
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
@@ -22,10 +35,15 @@ const Navbar = () => {
       <li>
         <NavLink to={"/mycart"}>My Cart</NavLink>
       </li>
+      <li>
+        <button onClick={handleTheme}>
+          {theme === "light" ? "Dark" : "Light"}
+        </button>
+      </li>
     </>
   );
   return (
-    <div className="max-w-7xl mx-auto navbar bg-base-100">
+    <div className="max-w-7xl mx-auto navbar dark:bg-slate-800 bg-base-100">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -65,13 +83,16 @@ const Navbar = () => {
                 <img src={user.photoURL ? user.photoURL : profile} />
               </div>
             </label>
-            <a onClick={handleLogOut} className="btn btn-neutral btn-outline">
+            <a
+              onClick={handleLogOut}
+              className="btn dark:btn-error dark:btn-outline btn-neutral btn-outline"
+            >
               Sign Out
             </a>
           </>
         ) : (
           <>
-            <button className="btn btn-neutral btn-outline">
+            <button className="btn dark:btn-info dark:btn-outline btn-neutral btn-outline">
               <NavLink to={"/login"}>Login</NavLink>
             </button>
           </>

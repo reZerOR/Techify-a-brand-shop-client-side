@@ -10,8 +10,8 @@ const Brands = () => {
   }, []);
 
   return (
-    <div>
-      <h2 className="text-5xl font-bold text-center my-10">
+    <div className="dark:text-black">
+      <h2 className="text-5xl dark:text-white font-bold text-center my-10">
         Our{" "}
         <span
           style={{ letterSpacing: "4px" }}

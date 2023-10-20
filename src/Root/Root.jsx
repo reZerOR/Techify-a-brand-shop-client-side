@@ -3,7 +3,7 @@ import Navbar from "../Components/Navbar/Navbar";
 
 const Root = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-slate-800 dark:text-white">
       <Navbar></Navbar>
       <Outlet></Outlet>
     </div>
