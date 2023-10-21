@@ -1,8 +1,11 @@
-# React + Vite
+# Techify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live link : https://brand-shop-4f7f6.web.app/
 
-Currently, two official plugins are available:
+### Feature
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. You can login or register in this page.
+2. You can see different brands product and a slider.
+3. You can add product to database.
+4. You can add product to your curt and later you can see whice products you added in my cart page.
+5. This website has dark mode. You can toggle between dark and light mode.
