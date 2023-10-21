@@ -9,7 +9,7 @@ const ProductDetais = () => {
   console.log(curt);
 
   const handleCurt = () => {
-    fetch("http://localhost:5000/curt", {
+    fetch("https://brand-shop-server-one-virid.vercel.app/curt", {
       method: "POST",
       headers: {
         "content-type": "application/json",

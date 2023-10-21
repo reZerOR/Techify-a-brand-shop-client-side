@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { authContext } from "../../Provider/Provider";
 import profile from "../../assets/user.png";
+import logo from "../../assets/tech_logo-removebg-preview.png";
 
 const Navbar = () => {
   const { user, logOut, setUser } = useContext(authContext);
@@ -69,7 +70,10 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-2xl">Festiva</a>
+        <a className="btn btn-ghost normal-case text-2xl">
+          <img className="w-10" src={logo} alt="" />
+          Techify
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>

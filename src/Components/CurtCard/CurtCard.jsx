@@ -16,7 +16,7 @@ const CurtCard = ({ curt, curts, setCurts }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         // DELETE FROM DATABASE
-        fetch(`http://localhost:5000/curt/${id}`, {
+        fetch(`https://brand-shop-server-one-virid.vercel.app/curt/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

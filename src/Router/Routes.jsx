@@ -9,11 +9,13 @@ import UpdateProduct from "../Pages/UpdateProduct/UpdateProduct";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./Private/PrivateRoute";
+import Errorpage from "../Pages/Errorpage/Errorpage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Errorpage></Errorpage>,
     children: [
       {
         path: "/",
@@ -23,7 +25,9 @@ const router = createBrowserRouter([
         path: "/brandproduct/:name",
         element: <BrandProduct></BrandProduct>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/brands/${params.name}`),
+          fetch(
+            `https://brand-shop-server-one-virid.vercel.app/brands/${params.name}`
+          ),
       },
       {
         path: "/productdetails/:id",
@@ -33,7 +37,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/productdetails/${params.id}`),
+          fetch(
+            `https://brand-shop-server-one-virid.vercel.app/productdetails/${params.id}`
+          ),
       },
       {
         path: "/mycart",
@@ -42,7 +48,8 @@ const router = createBrowserRouter([
             <MyCart></MyCart>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/curt"),
+        loader: () =>
+          fetch("https://brand-shop-server-one-virid.vercel.app/curt"),
       },
       {
         path: "/addproduct",
@@ -60,7 +67,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/productdetails/${params.id}`),
+          fetch(
+            `https://brand-shop-server-one-virid.vercel.app/productdetails/${params.id}`
+          ),
       },
       {
         path: "/login",

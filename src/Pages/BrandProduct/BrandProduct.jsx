@@ -9,7 +9,9 @@ const BrandProduct = () => {
 
   const sliderImages = useLoaderData();
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${sliderImages.brand_name}`)
+    fetch(
+      `https://brand-shop-server-one-virid.vercel.app/products/${sliderImages.brand_name}`
+    )
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
